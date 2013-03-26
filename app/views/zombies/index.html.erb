@@ -17,8 +17,8 @@
 <div class="row">
 	<div class="span12 well">
 		<%= form_for(@post, html: {class:"form-inline"}) do |f| %>
-			<%= f.text_field :posted_by, {placeholder:"e.g. jdelacruz",class:"span2 input-small",required:"required"} %>
-			<%= f.text_field :content, {placeholder:"What do you want to say?",class:"span4 input-small",required:"required"} %> 
+			<%= f.text_field :posted_by, {placeholder:"e.g. jdelacruz",class:"span2 input-small",required:"required",autocomplete:"off"} %>
+			<%= f.text_field :content, {placeholder:"What do you want to say?",class:"span4 input-small",required:"required",autocomplete:"off"} %> 
 			<%= f.submit "Grrrr!", {class:"btn input-small"} %>
 		<% end %>
 	</div>
