@@ -1,8 +1,14 @@
 HerokuApp::Application.routes.draw do
   
+  get "comments/index"
+
+  get "posts/index"
+
   root to: "zombies#index"
 
-  resources :zombies
+  resources :posts do
+    resources :comments
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
