@@ -1,2 +1,22 @@
-<h1>Comments#index</h1>
-<p>Find me in app/views/comments/index.html.erb</p>
+
+<p class="lead"> <em><%= @post.posted_by %></em> says </p>
+
+<blockquote>
+	<%= @post.content %>
+</blockquote>
+
+<br />
+
+<label class="label label-success">
+	Has <%= pluralize @comments.count, "comment" %>
+</label>
+
+<% if !@comments.empty? %>
+	<% @comments.each do |c| %>
+		<div style="padding:10px;border:1px solid #333;margin:5px 0px 5px 0px">
+			<img src="/assets/default_pic.jpg" style="width:75px;height:75px" class="pull-left" />
+			<p> &nbsp; <%= c.comment_by %> </p>
+			<div class="clearfix"></div>
+		</div>
+	<% end %>
+<% end %>

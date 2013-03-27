@@ -1,24 +1,11 @@
 
-
-<div class="row">
-	<div class="span12">
-		<h1> Another Zombie App </h1>
-		<code>I don't sleep, but when I do..............</code>
-		<hr />
-	</div>
-</div>
-
-<% if notice %>
-	<div class="alert alert-success">
-		<span style="font-weight:bold"> <%= notice %> </span>
-	</div>
-<% end %>
+<%= render partial: "message_partial" %>
 
 <div class="row">
 	<div class="span12 well">
 		<%= form_for(@post, html: {class:"form-inline"}) do |f| %>
-			<%= f.text_field :posted_by, {placeholder:"e.g. jdelacruz",class:"span2 input-small",required:"required",autocomplete:"off"} %>
-			<%= f.text_field :content, {placeholder:"What do you want to say?",class:"span4 input-small",required:"required",autocomplete:"off"} %> 
+			<%= f.text_field :posted_by, {placeholder:"#zombiename",class:"span2 input-small",required:"required",autocomplete:"off"} %>
+			<%= f.text_field :content, {placeholder:"#zombieshout",class:"span4 input-small",required:"required",autocomplete:"off"} %> 
 			<%= f.submit "Grrrr!", {class:"btn input-small"} %>
 		<% end %>
 	</div>
@@ -34,55 +21,13 @@
 	<% end %>
 	<div class="span6">
 
-		<% if !@posts_odd.empty? %>
-			<% @posts_odd.each do |post| %>
-				<hr />
-				<div>
-					<div>
-						<img class="pull-right" src="/assets/default_pic.jpg" />
-					</div>
-
-					<div>
-						<p class="lead"> <%= raw "<em>#{post.posted_by.titleize}</em>" %> says... </p>
-						
-							<blockquote>
-								<%= post.content %>
-							</blockquote>
-					
-					</div>
-
-					<div class="clearfix"></div>
-				</div>
-				<hr />
-			<% end %>
-		<% end %>
-
+		<%= render partial: "post_partial", object: @posts_odd %>
+	
 	</div>
 
 	<div class="span6">
 
-		<% if !@posts_even.empty? %>
-			<% @posts_even.each do |post| %>
-				<hr />
-				<div>
-					<div>
-						<img class="pull-right" src="/assets/default_pic.jpg" />
-					</div>
-
-					<div>
-						<p class="lead"> <%= raw "<em>#{post.posted_by.titleize}</em>" %> says... </p>
-						
-							<blockquote>
-								<%= post.content %>
-							</blockquote>
-					
-					</div>
-
-					<div class="clearfix"></div>
-				</div>
-				<hr />
-			<% end %>
-		<% end %>
+		<%= render partial: "post_partial", object: @posts_even %>
 
 	</div>
 </div>
