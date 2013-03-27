@@ -16,6 +16,7 @@
 		<div style="padding:10px;border:1px solid #333;margin:5px 0px 5px 0px">
 			<img src="/assets/default_pic.jpg" style="width:75px;height:75px" class="pull-left" />
 			<p> &nbsp; <%= c.comment_by %> </p>
+			<code class="pull-right"> Created at: <%=  "#{c.created_at.hour}:#{c.created_at.min}" %> </code>
 			<div class="clearfix"></div>
 		</div>
 	<% end %>
