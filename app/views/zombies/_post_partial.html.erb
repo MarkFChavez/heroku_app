@@ -17,7 +17,7 @@
 						<label data-url="<%= post_comments_url(post) %>" class="label label-success view-comments">This post has <%= pluralize post.comments.count, "comment" %></label>
 						
 						<%= form_for([post,@comment], html: {style:"margin-top:10px"}) do |t| %>
-						<p> <%= t.text_field :comment_by, {class:"span2 input-small",placeholder:"#comment",required:"required"} %> </p>
+						<p> <%= t.text_field :comment_by, {class:"span2 input-small",placeholder:"#comment",required:"required",autocomplete:"off"} %> </p>
 						<% end %>
 					</div>
 
