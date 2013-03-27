@@ -6,7 +6,7 @@
 		<%= form_for(@post, html: {class:"form-inline"}) do |f| %>
 			<%= f.text_field :posted_by, {placeholder:"#zombiename",class:"span2 input-small",required:"required",autocomplete:"off"} %>
 			<%= f.text_field :content, {placeholder:"#zombieshout",class:"span4 input-small",required:"required",autocomplete:"off"} %> 
-			<%= f.submit "Grrrr!", {class:"btn input-small"} %>
+			<%= f.submit "Grrrr!", {class:"btn btn-inverse input-small"} %>
 		<% end %>
 	</div>
 </div>
